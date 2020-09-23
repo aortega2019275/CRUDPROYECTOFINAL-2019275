@@ -9,12 +9,14 @@ import java.util.List;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import model.Persona;
 
 
 public class PersonaDAO implements CRUD{
     
-	Conexion conect = new conexion();
+	Conexion conect = new Conexion();
 	Connection con;
 	PreparedStatement ps;
 	ResultSet rs;
@@ -23,48 +25,48 @@ public class PersonaDAO implements CRUD{
 	
 	
 	@Override
-	    public List listar();
+	    public List listar(){
             ArrayList<Persona> listaPersona = new ArrayList<>();
 		String sql = "select * from Persona";
 		try{
 		
 		
-			con = conect.getConection():
-			ps = con.PreparedStatement(sql);
+			con = conect.getConection();
+			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Persona nuevaPersona = new Persona();
 				nuevaPersona.setCodigoPersona(rs.getInt("codigoPersona"));
-			    nuevaPersona.setDPI(rs.getString(DPI));
-				nuevaPersona.setNombrePersona(rs.getString(NombrePersona));
+			    nuevaPersona.setDPI(rs.getString("DPI"));
+				nuevaPersona.setNombrePersona(rs.getString("nombrePersona"));
 				listaPersona.add(nuevaPersona);
 			}
-			
-		}catch(Exception e){
+                
+		}catch(SQLException e){
 		e.printStackTrace();
 		}
 		
 		return listaPersona;
-	}
-	
-	@override
-	public Persona list(int id);
-	throw new UnsupportedOperationException("No soportado");
-	}
-	
-	@Override
-	public boolean add(Persona per);
-		throw new UnsupportedOperationException("No soportado");
-	}
-    
-	@Override
-	public boolean edit(Persona per);
-			throw new UnsupportedOperationException("No soportado");
-	}
+            }
+    @Override
+    public Persona list(int id) {
+        throw new UnsupportedOperationException("Not supported.");
+    }
 
     @Override
-	public boolean eliminar(int id);
-			throw new UnsupportedOperationException("No soportado");
-	}
+    public boolean add(Persona per) {
+        throw new UnsupportedOperationException("Not supported."); 
+    }
 
-}
+    @Override
+    public boolean edit(Persona per) {
+        throw new UnsupportedOperationException("Not supported."); 
+    }
+
+    @Override
+    public boolean eliminar(int id) {
+        throw new UnsupportedOperationException("Not supported."); 
+    }
+	}
+	
+
