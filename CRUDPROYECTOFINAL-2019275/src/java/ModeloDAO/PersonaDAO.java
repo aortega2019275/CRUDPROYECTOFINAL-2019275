@@ -55,17 +55,47 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean add(Persona per) {
-        throw new UnsupportedOperationException("Not supported."); 
+        String sql = "Insert into persona (dpi, nombrePersona) values ('"+per.getDPI()+"','"+per.getNombrePersona()+"')"; 
+            
+        try{
+             con = conect.getConection();
+             ps = con.prepareStatement(sql);
+             ps.executeUpdate();
+                
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+            return false;
+             
     }
 
     @Override
     public boolean edit(Persona per) {
-        throw new UnsupportedOperationException("Not supported."); 
+        String sql = "Update persona set DPI ='"+per.getDPI()+" nombrePersona = '"+per.getNombrePersona()+"'where codigoPersona ="+per.getCodigoPersona();
+         try{
+           con = conect.getConection();
+            ps = con.prepareStatement(sql);
+	    rs = ps.executeQuery();  
+         } catch (Exception e){
+                e.printStackTrace();
+             
+         }
+         
+         return false; 
     }
 
     @Override
     public boolean eliminar(int id) {
-        throw new UnsupportedOperationException("Not supported."); 
+        String sql = "delete from persona where codigoPersona ="+id;
+        try{
+            con = conect.getConection();
+            ps = con.prepareStatement(sql);
+            ps.executeUpdate();
+            
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false; 
     }
 	}
 	
