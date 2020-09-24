@@ -5,25 +5,29 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html class="h-100">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Listar Registros</title>
+        <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <title>Lista de Registros</title>
     </head>
-    <body>
-        <div class="container">
-            <h1> Datos en la entidad Persona</h1>
-            <a href="Controlador?accion=add">Agregar Registro <a/>
+    <body class="h-100" style="background-image: url('https://www.xtrafondos.com/wallpapers/montanas-minimalista-arte-low-poly-3354.jpg');">
+        <div class="text-center container h-100">
+            <div class="row justify-content-center h-100">
+            <div class="col-sm-20 align-self-center text-center">
+        <div>
+            <h1 class="font-weight-light text-white"> LISTA DE PERSONAS</h1>
+            <a class="btn btn-outline-success waves-effect"  href="Controlador?accion=add">Agregar Registro </a>
                 <br><br>
-            <table>
-                <thead>  
-                    <tr>
-                        <td> Codigo Persona </td>
+            <table class="table table-dark table-striped ">
+                <thead class="thead-dark"> 
+                    <tr class="font-weight-light">
+                        <td> <strong>Codigo Persona</strong> </td>
                         <td>  <strong>DPI</strong></td>
                         <td>  <strong>Nombres</strong></td>
                         <td>  <strong>Acciones</strong></td>
-                    </tr
-                </thead
+                    </tr>
+                </thead>
                 <%
                             PersonaDAO dao = new PersonaDAO();
                             List<Persona> listarPersona = dao.listar();
@@ -33,20 +37,23 @@
                                 per = iterator.next();
                             %>
                 <tbody>
-                    <tr>
+                    <tr class="font-weight-light">
                         <td><%= per.getCodigoPersona()%></td>
                         <td><%= per.getDPI()%></td>
                         <td><%= per.getNombrePersona()%></td>
                         <td>
-                            <a  href="Controlador?accion=editar&codigoPersona=<%= per.getCodigoPersona() %>"> Editar</a>
-                            <a  href="Controlador?accion=eliminar&codigoPersona=<%= per.getCodigoPersona() %>">Eliminar</a>
-                            
+                            <a  class="btn btn-outline-info waves-effect" href="Controlador?accion=editar&codigoPersona=<%= per.getCodigoPersona() %>"> Editar</a>
+                            <a  class="btn btn-outline-danger waves-effect" href="Controlador?accion=eliminar&codigoPersona=<%= per.getCodigoPersona() %>">Eliminar</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
+                </div>
+                </div>
         </div>
+                </div>
+                
     </body>
 </html>
 
