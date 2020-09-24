@@ -7,3 +7,6 @@ create table Persona(
     nombrePersona varchar(100) not null,
     primary key (codigoPersona)
 );
+
+Insert into Persona (DPI, nombrePersona)
+Values (" " ," " );
