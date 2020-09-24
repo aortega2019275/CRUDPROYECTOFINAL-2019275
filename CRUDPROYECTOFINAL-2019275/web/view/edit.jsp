@@ -4,8 +4,9 @@
     Author     : PABLO ALEMAN
 --%>
 
+<%@page import="ModeloDAO.PersonaDAO"%>
 <%@page import="model.Persona"%>
-<%@page import="modelDAO.PersonaDAO"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        
+        <div>
         <%
           PersonaDAO nuevaPersonaDao = new PersonaDAO();
           int codPersona = Integer.parseInt((String)request.getAttribute("codPer"));
@@ -25,11 +26,12 @@
         <h1>Modificar persona</h1>
         <form action="Controlador">
             DPI:<br>
-            <input type="text" name="txtDPI" value="<%= nuevaPersona.getDPI()%>"><br>
+            <input type="text" name="txtDPI" value="<%= nuevaPersona.getDPI()%>" required><br>
             Nombre:<br>
-             <input type="text" name="txtNombre" value="<%= nuevaPersona.getNombrePersona()  %>"><br><br>
-            <input type="hidden" name="txtCodigoPersona" value="<%= nuevaPersona.getCodigoPersona() %>"><br><br>
+             <input type="text" name="txtNombre" value="<%= nuevaPersona.getNombrePersona() %>" required><br>
+            <input type="hidden" name="txtCodigoPersona" value="<%= nuevaPersona.getCodigoPersona() %>" required><br>
             <input type="submit" name="accion" value="Actualizar"><br><br>
         </form>
+            </div>
     </body>
 </html>

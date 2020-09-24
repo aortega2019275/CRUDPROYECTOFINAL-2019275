@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/git/ProyectoFInal/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/ModeloDAO/PersonaDAO.java</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/configuration/Conexion.java</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/web/view/edit.jsp</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/web/view/add.jsp</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/intefaces/CRUD.java</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/controller/Controlador.java</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/model/Persona.java</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/web/view/list.jsp</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/conf/MANIFEST.MF</file>
+            <file>file:/C:/git/CRUDPROYECTOFINAL-2019275/CRUDPROYECTOFINAL-2019275/src/java/ModeloDAO/PersonaDAO.java</file>
         </group>
     </open-files>
 </project-private>

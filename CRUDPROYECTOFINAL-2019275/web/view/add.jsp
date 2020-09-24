@@ -11,10 +11,10 @@
            <h1>Agregar Registro</h1>
            <form action="Controlador">
                DPI:<br>
-               <input type="text" name="txtDPI"> <br><br>
+               <input type="text" name="txtDPI" placeholder="Ingrese su DPI" required> <br><br>
                Nombres:<br>
-               <input type="text" name="txtNombre"> <br><br>
-               <input type="submit" name="accion" value="Agregar"> <br>
+               <input type="text" name="txtNombre" placeholder="Ingrese su Nombre" required> <br><br>
+               <input type="submit" name="accion" value="Agregar" > <br>
            </form>
        
 

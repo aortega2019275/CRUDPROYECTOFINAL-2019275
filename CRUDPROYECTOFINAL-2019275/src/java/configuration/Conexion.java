@@ -9,8 +9,8 @@ public class Conexion {
     
     public Conexion () {
         try{
-    	Class.forName("com.mysql.Driver");
-	conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBRegistro?useSSL=falas","root","admin");
+    	Class.forName("com.mysql.jdbc.Driver");
+	conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBRegistro?useSSL=false","root","root");
         }catch (Exception e) {
 	e.printStackTrace ();
 	System.out.println("La conexion no se puedo establecer " + e);

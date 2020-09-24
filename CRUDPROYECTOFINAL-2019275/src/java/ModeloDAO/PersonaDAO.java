@@ -48,9 +48,22 @@ public class PersonaDAO implements CRUD{
 		
 		return listaPersona;
             }
-    @Override
+     @Override
     public Persona list(int id) {
-        throw new UnsupportedOperationException("Not supported.");
+        String sql = "Select * from Persona where codigoPersona="+id;
+        try{
+            con = conect.getConection();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            while(rs.next()) {
+                nuevaPersona.setCodigoPersona(rs.getInt("codigoPersona"));
+                nuevaPersona.setDPI(rs.getString("DPI"));
+                nuevaPersona.setNombrePersona(rs.getNString("nombrePersona"));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return nuevaPersona;
     }
 
     @Override
@@ -71,11 +84,11 @@ public class PersonaDAO implements CRUD{
 
     @Override
     public boolean edit(Persona per) {
-        String sql = "Update persona set DPI ='"+per.getDPI()+" nombrePersona = '"+per.getNombrePersona()+"'where codigoPersona ="+per.getCodigoPersona();
+        String sql = "Update persona set DPI ='"+per.getDPI()+", nombrePersona = '"+per.getNombrePersona()+"'where codigoPersona ="+per.getCodigoPersona();
          try{
            con = conect.getConection();
             ps = con.prepareStatement(sql);
-	    rs = ps.executeQuery();  
+	    ps.executeUpdate(); 
          } catch (Exception e){
                 e.printStackTrace();
              

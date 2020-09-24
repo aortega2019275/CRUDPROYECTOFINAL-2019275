@@ -1,7 +1,8 @@
+<%@page import="ModeloDAO.PersonaDAO"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Persona"%>
-<%@page import="modelDAO.PersonaDAO"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +13,7 @@
     <body>
         <div class="container">
             <h1> Datos en la entidad Persona</h1>
-            <a> href="Controlador?accion=add">Agregar Registro <a/>
+            <a href="Controlador?accion=add">Agregar Registro <a/>
                 <br><br>
             <table>
                 <thead>  
@@ -33,12 +34,12 @@
                             %>
                 <tbody>
                     <tr>
-                        <td><%= per.getCodPersona()%></td>
+                        <td><%= per.getCodigoPersona()%></td>
                         <td><%= per.getDPI()%></td>
                         <td><%= per.getNombrePersona()%></td>
                         <td>
-                            <a>  href="Controlador?accion=editar&codPersona=<%=per.getCodPersona()%>">Editar</a> 
-                            <a> href="Controlador?accion=eliminar&codPersona=<%=per.getCodPersona()%>">Delete</a>
+                            <a  href="Controlador?accion=editar&codigoPersona=<%= per.getCodigoPersona() %>"> Editar</a>
+                            <a  href="Controlador?accion=eliminar&codigoPersona=<%= per.getCodigoPersona() %>">Eliminar</a>
                             
                         </td>
                     </tr>
